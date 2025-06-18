@@ -1,0 +1,26 @@
+body {
+  background-color: #fffaf7;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #945c5c;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card.comprado {
+  opacity: 0.6;
+}
+
+.card.comprado .btn {
+  display: none;
+}
+
+.card-text small {
+  color: #888;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Presentes - Beatriz & Thiago</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/lista.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/lista.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Menu -->
+  <nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html" style="font-family: 'Dancing Script'">B + T</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" style="font-family: 'Dancing Script'">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body" style="font-family: 'Edu NSW ACT Hand Pre'">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item"><a class="nav-link" href="index.html">Sobre o Casamento</a></li>
+            <li class="nav-item"><a class="nav-link active" href="lista.html">Lista de Presentes</a></li>
+            <li class="nav-item"><a class="btn btn-outline-success" href="presenca.html">Confirmar Presença</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Modal de Edição (somente para os noivos) -->
+<div class="modal fade" id="modalEditarPresente" tabindex="-1" aria-labelledby="modalEditarPresenteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="formEditarPresente">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarPresenteLabel">Editar Presente</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="edit-id" />
+          <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" id="edit-nome" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Valor Total (R$)</label>
+            <input type="number" class="form-control" id="edit-valor" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Qtd. de Cotas</label>
+            <input type="number" class="form-control" id="edit-cotas" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Link do Produto</label>
+            <input type="url" class="form-control" id="edit-link" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Salvar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <!-- Lista de Presentes -->
+ <div class="container py-5">
+    <h2 class="text-center mb-4">Lista de Presentes</h2>
+
+    <!-- Botões para noivos -->
+    <div id="areaNoivo" style="display: none;">
+      <button class="btn btn-danger mb-3" id="logoutBtn">Sair</button>
+
+      <form id="formCadastro" class="mb-4">
+        <h5>Cadastrar Novo Presente</h5>
+        <input type="text" class="form-control mb-2" id="nome" placeholder="Nome do presente" required>
+        <input type="url" class="form-control mb-2" id="link" placeholder="Link do presente" required>
+        <input type="number" class="form-control mb-2" id="preco" placeholder="Preço total" required>
+        <input type="number" class="form-control mb-2" id="cotas" placeholder="Número de cotas (opcional)">
+        <button class="btn btn-primary" type="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <!-- Área de presentes -->
+    <div class="row" id="presentesContainer"></div>
+  </div>
+
+</body>
+</html>
