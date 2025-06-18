@@ -24,3 +24,27 @@ h2 {
 .card-text small {
   color: #888;
 }
+
+.card {
+  border-radius: 15px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card .btn-outline-primary {
+  font-weight: bold;
+}
